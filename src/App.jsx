@@ -20,8 +20,8 @@ function App() {
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/help" element={<Help/>}/>
         <Route path="/setting" element={<Setting/>}/>
-        <Route path="/loginpage" element={<Login/>}/>
-        <Route path="/signuppage" element={<SignUp/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<SignUp/>}/>
         <Route path="/message" element={<Msg/>}/>
         <Route path="/notification" element={<Notification/>}/>
         <Route path="/UserProfile:id" element={<ProfileSinglePage/>}/>

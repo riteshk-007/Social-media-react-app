@@ -60,7 +60,7 @@ function TopHeader() {
                       Setting
                       </li>
                     <li className='w-full h-1/4 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-black/20 transition-all duration-300'
-                     onClick={()=>navigate('/loginpage')}>
+                     onClick={()=>navigate('/login')}>
                       <FaPowerOff fontSize={16} className='mx-2'/>
                        Log Out
                        </li>
