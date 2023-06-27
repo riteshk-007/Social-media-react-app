@@ -1,9 +1,12 @@
+import TopHeader from "./components/TopHeader"
 
 function App() {
   return (
-    <div>
-      
+    <>
+    <div className="w-full h-screen bg-black/80">
+      <TopHeader/>
     </div>
+    </>
   )
 }
 
