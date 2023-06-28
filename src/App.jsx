@@ -13,7 +13,7 @@ import ProfileSinglePage from "./pages/ProfileSinglePage"
 function App() {
   return (
     <>
-    <div className="w-full h-screen bg-black/80">
+    <div className="w-full  bg-black/90">
       <TopHeader/>
       <Routes>
         <Route path="/" element={<Home/>}/>

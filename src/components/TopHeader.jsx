@@ -10,9 +10,10 @@ import { useNavigate } from 'react-router-dom';
         
 function TopHeader() {
   const [showMenu, setShowMenu] = useState(false)
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  
   return (
-    <div className="container mx-auto  md:flex items-center justify-between  py-5">
+    <div className="container mx-auto  md:flex items-center justify-between py-5 sticky top-0 z-50">
 
       {/*  logo and Search input */}
           <span className="w-full md:w-2/6 flex items-center justify-center md:justify-start relative md:mb-0 mb-2">
@@ -38,28 +39,28 @@ function TopHeader() {
 
 
      {/* user menu  */}
-          <span className="w-full md:w-2/6 flex items-center justify-start md:justify-end cursor-pointer p-1 relative md:mt-0 mt-3" onClick={()=> setShowMenu(!showMenu)}>
-              <span className='w-full md:w-40 h-10 shadow-md bg-black/20 flex items-center justify-center'>
+          <span className="w-full md:w-2/6 flex items-center justify-start md:justify-end cursor-pointer p-1 relative md:mt-0 mt-3 z-50" onClick={()=> setShowMenu(!showMenu)}>
+              <span className='w-full md:w-40 h-10 shadow-md bg-black/70 flex items-center justify-center'>
                   <img src="https://images.unsplash.com/photo-1635107510862-53886e926b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="userPic"  className='w-9 h-5/6 object-cover rounded-lg '/>
                     <h2 className='text-xs text-white mx-2 font-semibold'>Ritesh Kumar</h2>
                     <FaAngleDown className='mx-1 text-white'/>
               </span>
                {/* dropdown menu */}
             { showMenu &&  <div className='absolute w-full md:w-32 h-48 shadow-xl top-11 right-0 md:-right-5 flex items-center justify-center flex-col'>
-                    <li className='w-full h-1/4 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-black/20 transition-all duration-300' onClick={()=>navigate('/profile')}>
+                    <li className='w-full h-1/4 bg-black/90 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-gray-900 transition-all duration-300' onClick={()=>navigate('/profile')}>
                     <MdAccountCircle fontSize={16} className='mx-2'/>
                      Account
                      </li>
-                    <li className='w-full h-1/4 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-black/20 transition-all duration-300' onClick={()=>navigate('/help')}>
+                    <li className='w-full h-1/4 bg-black/90 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-gray-900 transition-all duration-300' onClick={()=>navigate('/help')}>
                       <BiHelpCircle fontSize={16} className='mx-2'/>
                        Help
                        </li>
-                    <li className='w-full h-1/4 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-black/20 transition-all duration-300'
+                    <li className='w-full h-1/4 bg-black/90 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-gray-900 transition-all duration-300'
                     onClick={()=>navigate('/setting')}>
                       <FiSettings fontSize={16} className='mx-2'/> 
                       Setting
                       </li>
-                    <li className='w-full h-1/4 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-black/20 transition-all duration-300'
+                    <li className='w-full h-1/4 bg-black/90 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-gray-900 transition-all duration-300'
                      onClick={()=>navigate('/login')}>
                       <FaPowerOff fontSize={16} className='mx-2'/>
                        Log Out
