@@ -5,15 +5,29 @@ import { BiHelpCircle } from 'react-icons/bi';
 import { FaAngleDown, FaPowerOff } from 'react-icons/fa';
 import { FiSettings } from 'react-icons/fi';
 import { AiOutlineMessage, AiOutlineHeart } from 'react-icons/ai';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
         
 function TopHeader() {
   const [showMenu, setShowMenu] = useState(false)
+  const [scroll, setScroll] = useState(false)
   const navigate = useNavigate();
+  useEffect(()=>{
+    window.addEventListener('scroll',handleScroll)
+  },[])
+          const handleScroll = ()=> {
+            const offset = window.scrollY;
+              if (offset > 50) {
+                setScroll(true)
+              } else {
+                setScroll(false)
+              }
+          }
+
+   
   
   return (
-    <div className="container mx-auto  md:flex items-center justify-between py-5 sticky top-0 z-50">
+    <div className={`${scroll ? 'container mx-auto  md:flex items-center justify-between py-5 sticky top-0 z-50 bg-black rounded-lg' :'container mx-auto  md:flex items-center justify-between py-5 sticky top-0 z-50'}`}>
 
       {/*  logo and Search input */}
           <span className="w-full md:w-2/6 flex items-center justify-center md:justify-start relative md:mb-0 mb-2">
