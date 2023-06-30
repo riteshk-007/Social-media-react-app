@@ -6,12 +6,13 @@ import { FaAngleDown, FaPowerOff } from 'react-icons/fa';
 import { FiSettings } from 'react-icons/fi';
 import { AiOutlineMessage, AiOutlineHeart } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
         
 function TopHeader() {
   const [showMenu, setShowMenu] = useState(false)
   const [scroll, setScroll] = useState(false)
   const navigate = useNavigate();
+  const {id} = useParams()
   useEffect(()=>{
     window.addEventListener('scroll',handleScroll)
   },[])
@@ -32,7 +33,7 @@ function TopHeader() {
       {/*  logo and Search input */}
           <span className="w-full md:w-2/6 flex items-center justify-center md:justify-start relative md:mb-0 mb-2">
               <span className="w-12 h-10 bg-white rounded-full shadow-md mx-5 cursor-pointer flex items-center justify-center" onClick={()=>navigate('/')}>
-                    <span className="w-5 h-5 bg-black s"></span>
+                    <span className="w-5 h-5 bg-black cursor-pointer" onClick={()=>navigate('/')}></span>
               </span>
               <span className="mx-5 w-full">
                 <input type="text" 
@@ -61,7 +62,7 @@ function TopHeader() {
               </span>
                {/* dropdown menu */}
             { showMenu &&  <div className='absolute w-full md:w-32 h-48 shadow-xl top-11 right-0 md:-right-5 flex items-center justify-center flex-col'>
-                    <li className='w-full h-1/4 bg-black/90 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-gray-900 transition-all duration-300' onClick={()=>navigate('/profile')}>
+                    <li className='w-full h-1/4 bg-black/90 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-gray-900 transition-all duration-300' onClick={()=>navigate(`/userProfile/${id}`)}>
                     <MdAccountCircle fontSize={16} className='mx-2'/>
                      Account
                      </li>
