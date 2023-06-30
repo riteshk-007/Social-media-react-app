@@ -1,5 +1,22 @@
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
 function Story() {
+    
+    const getBox = ()=>{
+            return document.querySelector('.scrolldiv');
+    }
+     
+    
+        const btnLeft = ()=>{
+            const box = getBox()
+            const width = box.clientWidth;
+            box.scrollLeft =   box.scrollLeft - width;
+        }
+        const btnRight = ()=>{
+            const box = getBox()
+            const width = box.clientWidth;
+            box.scrollLeft =    box.scrollLeft + width;
+        }
     const image = [
         {
             id: 682699,
@@ -49,20 +66,30 @@ function Story() {
     ]
 
     return (
-        <div className="w-full lg:w-4/5 py-1 flex items-start overflow-x-hidden overflow-auto ">
+        
+        <div className="relative  w-9/12">
 
+        <div className="full py-1 flex items-start  overflow-x-auto scroll-smooth scrolled scrolldiv">
+            
+                <div className="w-auto flex items-start justify-between ">
+                
             {
                 image.map((item) => {
-                    return <span className="flex text-center justify-center flex-col mx-1 lg:mx-3 my-1" key={item.id}>
+                    return <span className="flex items-center justify-center flex-col  lg:mx-3 w-16 scroll-smooth" key={item.id}>
                         <img src={item.img} alt="story" className="w-10 h-10 lg:w-14 lg:h-14 rounded-2xl overflow-hidden object-cover border border-yellow-400 cursor-pointer shadow shadow-slate-400" />
                         <h5 className="text-xs text-gray-200 font-semibold my-2">{item.name}</h5>
                     </span>
                 })
             }
+        
 
-
+    <button className='bg-black/80 text-white rounded-full text-2xl  absolute top-6 -left-1' onClick={btnLeft}><BiChevronLeft/></button>
+     <button className='bg-black/80 text-white rounded-full text-2xl  absolute top-6 -right-2' onClick={btnRight}><BiChevronRight/></button>
+            </div>
 
         </div>
+            </div>
+                     
     )
 }
 
