@@ -51,12 +51,12 @@ function Post() {
                         <span className="w-1/12 flex items-center justify-center">
                             <img src={item.profile} alt="userPic"
                                 className="lg:w-10 lg:h-10 w-8 h-8 rounded-2xl object-cover border-2 border-gray-500 cursor-pointer"
-                                onClick={() => navigate(`/UserProfile:${item.id}`)}
+                                onClick={() => navigate(`/userProfile/${item.id}`)}
                             />
                         </span>
                         <span className="w-3/4  flex items-start justify-center  flex-col">
-                            <h3 className='mx-2 text-gray-400 text-xs cursor-pointer font-semibold my-1' onClick={() => navigate(`/UserProfile:${item.id}`)}>{item.username}</h3>
-                            <h3 className='mx-2 text-gray-200 text-xs lg:text-sm cursor-pointer font-semibold' onClick={() => navigate(`/UserProfile:${item.id}`)}>{item.name}</h3>
+                            <h3 className='mx-2 text-gray-400 text-xs cursor-pointer font-semibold my-1' onClick={() => navigate(`/userProfile/${item.id}`)}>{item.username}</h3>
+                            <h3 className='mx-2 text-gray-200 text-xs lg:text-sm cursor-pointer font-semibold' onClick={() => navigate(`/userProfile/${item.id}`)}>{item.name}</h3>
                         </span>
                         <span className="w-1/12   flex items-center justify-center">
                             <BsThreeDotsVertical fontSize={22} className='text-white cursor-pointer my-2' />

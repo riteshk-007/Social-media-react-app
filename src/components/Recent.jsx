@@ -46,8 +46,8 @@ function Recent() {
                         <div key={item.id} className="w-full px-5 cursor-pointer" >
                             <span className="w-full h-24 bg-gray-900 rounded-lg shadow-lg my-2 flex items-center justify-center flex-col">
                                 <span className="w-full flex items-center justify-start p-1">
-                                    <img src={item.img} alt="" className="w-10 h-10 border-2 border-gray-300 mx-2 rounded-lg" onClick={() => navigate(`UserProfile:${item.id}`)}/>
-                                    <h1 className="text-sm text-gray-300 font-semibold" onClick={() => navigate(`UserProfile:${item.id}`)}>{item.name}</h1>
+                                    <img src={item.img} alt="" className="w-10 h-10 border-2 border-gray-300 mx-2 rounded-lg" onClick={() => navigate(`userProfile/${item.id}`)}/>
+                                    <h1 className="text-sm text-gray-300 font-semibold" onClick={() => navigate(`userProfile/${item.id}`)}>{item.name}</h1>
                                 </span>
                                 <span className="w-full flex items-center justify-evenly">
                                     <button className="bg-yellow-300 font-semibold text-gray-700 px-4 py-1 my-1 rounded-lg">confirm</button>

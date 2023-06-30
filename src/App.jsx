@@ -24,7 +24,7 @@ function App() {
         <Route path="/signup" element={<SignUp/>}/>
         <Route path="/message" element={<Msg/>}/>
         <Route path="/notification" element={<Notification/>}/>
-        <Route path="/UserProfile:id" element={<ProfileSinglePage/>}/>
+        <Route path="/userProfile/:id" element={<ProfileSinglePage/>}/>
       </Routes>
     </div>
     </>
