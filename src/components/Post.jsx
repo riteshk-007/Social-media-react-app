@@ -38,13 +38,13 @@ function Post() {
         },
     ]
     return (
-        <div className="w-full lg:w-4/5  my-2  px-3 py-2  flex items-center justify-center flex-col">
+        <div className="w-full lg:w-4/5  my-2  lg:px-3 py-2  flex items-center justify-center flex-col">
             {/* post  */}
 
 
             {
                 post.map((item)=>{
-                    return  <div className=" bg-black/10 w-full px-2 lg:px-4 py-2 my-3  rounded-3xl flex items-center justify-center flex-col" key={item.id}>
+                    return  <div className=" bg-black/10 w-full lg:px-4 py-2 my-3  rounded-3xl flex items-center justify-center flex-col" key={item.id}>
                     {/* post top section  */}
                     <span className="w-full flex items-center justify-center my-2">
     
@@ -62,7 +62,7 @@ function Post() {
                             <BsThreeDotsVertical fontSize={22} className='text-white cursor-pointer my-2' />
                         </span>
                     </span>
-                    <span className='text-white text-[6px] lg:text-xs w-full px-5 my-2 font-light tracking-wider'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quos nemo harum eaque, pariatur corporis dolorum a suscipit praesentium sapiente.</span>
+                    <span className='text-white text-[8px] lg:text-xs w-full px-5 my-2 font-light tracking-wider'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quos nemo harum eaque, pariatur corporis dolorum a suscipit praesentium sapiente.</span>
                     {/* post image section  */}
                     <span className='w-full object-cover px-5 my-4'>
                         <img src={item.picture} alt="post" className='w-full h-1/2 object-cover rounded-2xl' />

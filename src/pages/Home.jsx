@@ -4,9 +4,13 @@ import ProfileCom from "../components/ProfileCom"
 import Recent from "../components/Recent"
 import SkillCom from "../components/SkillCom"
 import Story from "../components/Story"
+import { useEffect } from "react"
 
 
 function Home() {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   return (
     <div className="w-full flex items-start justify-center">
 

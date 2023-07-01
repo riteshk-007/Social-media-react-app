@@ -67,7 +67,7 @@ function Story() {
 
     return (
         
-        <div className="relative  w-9/12">
+        <div className="relative w-11/12 lg:w-9/12">
 
         <div className="full py-1 flex items-start  overflow-x-auto scroll-smooth scrolled scrolldiv">
             
@@ -83,8 +83,8 @@ function Story() {
             }
         
 
-    <button className='bg-black/80 text-white rounded-full text-2xl  absolute top-6 -left-1' onClick={btnLeft}><BiChevronLeft/></button>
-     <button className='bg-black/80 text-white rounded-full text-2xl  absolute top-6 -right-2' onClick={btnRight}><BiChevronRight/></button>
+    <button className='bg-black/80 text-white rounded-full text-2xl  hidden md:block absolute top-5 -left-1' onClick={btnLeft}><BiChevronLeft/></button>
+     <button className='bg-black/80 text-white rounded-full text-2xl hidden md:block  absolute top-5 -right-4' onClick={btnRight}><BiChevronRight/></button>
             </div>
 
         </div>
