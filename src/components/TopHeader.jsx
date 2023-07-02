@@ -7,6 +7,7 @@ import { FiSettings } from 'react-icons/fi';
 import { AiOutlineMessage, AiOutlineHeart } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useFirebase } from '../../firebase/Firebase';
         
 function TopHeader() {
   const [showMenu, setShowMenu] = useState(false)
@@ -25,7 +26,7 @@ function TopHeader() {
               }
           }
 
-  
+  const firebase = useFirebase()
   return (
     <div className={`${scroll ? 'lg:container lg:mx-auto w-full flex items-center justify-around py-5 sticky top-0 z-50 bg-black rounded-lg' :'lg:container lg:mx-auto w-full flex items-center justify-around py-5 sticky top-0 z-50'}`}>
 
@@ -44,7 +45,7 @@ function TopHeader() {
           </span>
 
     {/*  menu buttons */}
-          <span className=" w-auto lg:w-2/6 flex items-center justify-center ">
+          <span className=" w-auto lg:w-2/6 flex items-center justify-center">
           <HiHome className='text-white cursor-pointer text-lg mx-3 lg:mx-7'onClick={()=>navigate('/')}/>
           <AiOutlineMessage className='text-white cursor-pointer text-lg mx-3 lg:mx-7' onClick={()=>navigate('/message')}/>
           <GoBell className='text-white cursor-pointer text-lg mx-3 lg:mx-7' onClick={()=>navigate('/notification')}/>
@@ -54,7 +55,7 @@ function TopHeader() {
 
      {/* user menu  */}
           <span className="w-auto md:w-2/6 flex items-center justify-start md:justify-end cursor-pointer p-1 relative  z-50" onClick={()=> setShowMenu(!showMenu)}>
-              <span className=' w-16 mr-1 lg:w-40 h-10 shadow-md bg-black/70 flex items-center justify-center'>
+              <span className=' w-16 mr-1 lg:w-40 h-10 shadow-md bg-black/70 flex items-center justify-center rounded-md'>
                   <img src="https://images.unsplash.com/photo-1635107510862-53886e926b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="userPic"  className='w-9 h-5/6 object-cover rounded-lg '/>
                     <h2 className='text-xs text-white mx-2 font-semibold lg:flex hidden'>Ritesh Kumar</h2>
                     <FaAngleDown className='mx-1 text-white'/>
@@ -75,7 +76,7 @@ function TopHeader() {
                       Setting
                       </li>
                     <li className='w-36 h-1/4 bg-black/90 shadow flex items-center justify-start list-none px-1 text-white text-xs font-bold hover:bg-gray-900 transition-all duration-300'
-                     onClick={()=>navigate('/login')}>
+                     onClick={()=> firebase.LoggedOut()}>
                       <FaPowerOff fontSize={16} className='mx-2'/>
                        Log Out
                        </li>

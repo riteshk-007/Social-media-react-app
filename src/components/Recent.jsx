@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import { RxCross2 } from 'react-icons/rx';
 
 function Recent() {
     const navigate = useNavigate()
@@ -43,16 +44,13 @@ function Recent() {
             {
                 request.map((item) => {
                     return (
-                        <div key={item.id} className="w-full px-5 cursor-pointer" >
-                            <span className="w-full h-24 bg-gray-900 rounded-lg shadow-lg my-2 flex items-center justify-center flex-col">
-                                <span className="w-full flex items-center justify-start p-1">
-                                    <img src={item.img} alt="" className="w-10 h-10 border-2 border-gray-300 mx-2 rounded-lg" onClick={() => navigate(`userProfile/${item.id}`)}/>
-                                    <h1 className="text-sm text-gray-300 font-semibold" onClick={() => navigate(`userProfile/${item.id}`)}>{item.name}</h1>
-                                </span>
-                                <span className="w-full flex items-center justify-evenly">
-                                    <button className="bg-yellow-300 font-semibold text-gray-700 px-4 py-1 my-1 rounded-lg">confirm</button>
-                                    <button className="bg-gray-800 px-4 py-1 my-1 rounded-lg">delete</button>
-
+                        <div key={item.id} className="w-full px-5" >
+                            <span className="w-full h-16 bg-gray-900 rounded-lg shadow-lg my-2 flex items-start justify-center flex-col">
+                                <span className="w-full flex items-center justify-evenly p-1  relative">
+                                    <img src={item.img} alt="" className="w-10 h-10 border-2 border-gray-300 mx-1 rounded-lg cursor-pointer" onClick={() => navigate(`userProfile/${item.id}`)}/>
+                                    <h1 className="text-xs text-gray-300 font-semibold cursor-pointer" onClick={() => navigate(`userProfile/${item.id}`)}>{item.name}</h1>
+                                    <button className="bg-yellow-300 font-semibold text-xs text-gray-700 px-3 py-1 my-1 rounded-xl">follow</button>
+                                 <RxCross2 className="text-white cursor-pointer"/>
                                 </span>
                             </span>
                         </div>
