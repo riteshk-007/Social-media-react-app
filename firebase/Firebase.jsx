@@ -5,7 +5,7 @@ import {
      createUserWithEmailAndPassword,
       signInWithEmailAndPassword,
        GoogleAuthProvider,
-        signInWithPopup,
+        signInWithRedirect,
         onAuthStateChanged,
         signOut
      } from 'firebase/auth'
@@ -40,7 +40,7 @@ export const FirebaseProvider = ({children})=>{
     const signInUser = (email, password) => signInWithEmailAndPassword(firebaseAuth, email, password)
 
     // google login 
-    const signinWithGoogle = ()=> signInWithPopup(firebaseAuth, GoogleProvider)
+    const signinWithGoogle = ()=> signInWithRedirect(firebaseAuth, GoogleProvider)
 
     // check user login or not 
 

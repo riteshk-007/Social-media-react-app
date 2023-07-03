@@ -27,7 +27,7 @@ function SignUp() {
   },[firebase, navigate])
   return (
     <div className="lg:w-1/2 lg:h-screen w-full h-1/2 bg-black flex items-center justify-center py-3">
-      <form className="w-full h-full bg-black flex items-center justify-center flex-col" onSubmit={handleSubmit}>
+      <form className="w-full  bg-black flex items-center justify-center flex-col" onSubmit={handleSubmit}>
         <div className="flex items-center justify-center flex-col  w-full lg:p-4 p-1 ">
           <span className="w-full text-white text-center font-bold text-xl md:text-4xl my-2">Sign In</span>
           <input type="email" placeholder="Email" className="my-3 lg:w-4/5 w-11/12 h-10 rounded-md bg-gray-800 px-4  text-white outline-yellow-600 "
