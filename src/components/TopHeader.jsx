@@ -6,14 +6,15 @@ import { FaAngleDown, FaPowerOff } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { AiOutlineMessage, AiOutlineHeart } from "react-icons/ai";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useFirebase } from "../../firebase/Firebase";
 
 function TopHeader() {
   const [showMenu, setShowMenu] = useState(false);
   const [scroll, setScroll] = useState(false);
   const navigate = useNavigate();
-  const { id } = useParams();
+  const firebase = useFirebase();
+  const id = firebase.userId;
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, []);
@@ -26,7 +27,6 @@ function TopHeader() {
     }
   };
 
-  const firebase = useFirebase();
   return (
     <div
       className={`${
@@ -54,7 +54,7 @@ function TopHeader() {
           />
         </span>
         <span
-          className="absolute left-8 top-0 lg:block hidden w-1 h-6 bg-black -rotate-45"
+          className="absolute left-8 top-0 lg:block hidden w-1 h-6 bg-black -rotate-45 cursor-pointer"
           onClick={() => navigate("/")}
         ></span>
       </span>

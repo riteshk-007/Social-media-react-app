@@ -37,6 +37,7 @@ export const FirebaseProvider = ({ children }) => {
   const [name, setName] = useState("user");
   const [email, setEmail] = useState(null);
   const [url, setUrl] = useState(null);
+  const [userId, setUserId] = useState(null);
 
   // sign up user
   const signupUser = (email, password) =>
@@ -107,6 +108,15 @@ export const FirebaseProvider = ({ children }) => {
     UserImg();
   }, []);
 
+  useEffect(() => {
+    firebaseAuth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserId(user.uid);
+      } else {
+        setUserId(null);
+      }
+    });
+  }, []);
   return (
     <firebaseContext.Provider
       value={{
@@ -121,6 +131,7 @@ export const FirebaseProvider = ({ children }) => {
         handleCreatePost,
         listPost,
         getImageURL,
+        userId,
       }}
     >
       {children}

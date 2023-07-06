@@ -8,6 +8,7 @@ function NewpostUploader() {
   const [uploadData, setUploadData] = useState(false);
   const [cover, setCover] = useState("");
   const [disc, setDisc] = useState("");
+  const [value, setValue] = useState("Upload");
 
   const firebase = useFirebase();
 
@@ -17,6 +18,16 @@ function NewpostUploader() {
     setUploadData(false);
   };
 
+  const handleClick = () => {
+    const submit = document.querySelector(".submit");
+    submit.style.cursor = "no-drop";
+    setValue("Uploading..");
+    setInterval(() => {
+      setValue("Upload");
+      submit.style.cursor = "pointer";
+    }, 2500);
+  };
+
   return (
     <div className="w-full lg:w-4/5  rounded-xl px-3 py-2  bg-black/20  flex items-center justify-center flex-col">
       <span className="flex items-center justify-center w-full">
@@ -24,7 +35,7 @@ function NewpostUploader() {
           <img
             src="/user.png"
             alt=""
-            className="lg:w-12 bg-black lg:h-12 w-10 h-10 rounded-2xl border-2 border-gray-500 object-cover overflow-hidden"
+            className="lg:w-12 bg-black lg:h-12 w-10 h-10 rounded-2xl border-2 border-gray-500 object-cover overflow-hidden "
           />
         ) : (
           <img
@@ -83,7 +94,7 @@ function NewpostUploader() {
                 type="file"
                 id="image"
                 accept="image/*"
-                className="my-3 cursor-pointer"
+                className="my-3 cursor-pointer file:bg-yellow-200 file:border-yellow-400 file:text-base file:font-semibold file:rounded-md file:mx-5 file:outline-none file:shadow-md file:font-sans file:cursor-pointer file:px-4"
                 onChange={(e) => setCover(e.target.files[0])}
                 required
               />
@@ -99,8 +110,9 @@ function NewpostUploader() {
 
               <input
                 type="submit"
-                className="bg-yellow-500 px-5 py-2 my-4 text-white font-semibold rounded-md cursor-pointer"
-                value={"Upload"}
+                className="bg-yellow-500 px-5 py-2 my-4 text-white font-semibold rounded-md cursor-pointer submit"
+                value={value}
+                onClick={handleClick}
               />
               <ImCross
                 fontSize={15}

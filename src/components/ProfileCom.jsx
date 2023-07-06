@@ -1,10 +1,10 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useFirebase } from "../../firebase/Firebase";
 
 function ProfileCom() {
   const navigate = useNavigate();
-  const { id } = useParams();
   const firebase = useFirebase();
+  const id = firebase.userId;
   return (
     <div className="w-3/4 h-96  bg-black/10 shadow-md rounded-3xl overflow-hidden relative hidden lg:flex items-center justify-center flex-col text-white">
       {!firebase.url ? (
