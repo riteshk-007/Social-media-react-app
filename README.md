@@ -48,7 +48,6 @@ npm start
 
 - React
 - React Router
-- Redux
 - Firebase (Authentication, Firestore, Storage)
 - Material-UI
 
