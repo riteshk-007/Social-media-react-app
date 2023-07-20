@@ -1,4 +1,5 @@
 # Social Media React App
+![image](https://github.com/riteshk-007/Social-media-react-app/assets/135107962/8d4104b8-0881-4d6a-8a52-9dbb92a6c4f1)
 
 This is a social media web application built with React. It provides users with a platform to share posts, follow other users, and engage in discussions through comments and likes.
 
@@ -43,6 +44,9 @@ npm start
 ```
 
 5. Open your browser and visit `http://localhost:3000` to access the application.
+![image](https://github.com/riteshk-007/Social-media-react-app/assets/135107962/6e4434a6-d9e8-412b-b102-6a964bfdf71e)
+![image](https://github.com/riteshk-007/Social-media-react-app/assets/135107962/cad21079-3308-4d9f-82ba-1dda07682b0a)
+
 
 ## Technologies Used
 
@@ -52,6 +56,7 @@ npm start
 - Material-UI
 
 ## Project Structure
+![image](https://github.com/riteshk-007/Social-media-react-app/assets/135107962/09710c62-0c88-4f39-b730-29bb5919c2de)
 
 The project structure follows the standard React application structure:
 
@@ -72,6 +77,7 @@ Contributions are welcome! If you find any issues or would like to add new featu
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+![image](https://github.com/riteshk-007/Social-media-react-app/assets/135107962/965aade9-8380-4e70-84e7-9588ad9aea8c)
 
 ## Acknowledgements
 
